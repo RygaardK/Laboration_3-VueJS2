@@ -3,7 +3,7 @@
 		<Header v-on:sendData="sendToLatest($event)" />
 		<p v-if="submitting" class="submittingText">Submitting...</p>
 		<p v-if="loading" class="loadingText">Loading our Snippets...</p>
-		<Latest v-bind:passthru="snipps" />
+		<Latest v-bind:passthru="snipps" v-on:deleteSnippet="deleteSnipp($event)" />
 	</div>
 </template>
 

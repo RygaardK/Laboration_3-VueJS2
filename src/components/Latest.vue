@@ -28,15 +28,22 @@ export default {
   props: {
     passthru: Array
   },
-  data() {
-    return {
-      // snipps: [],
-      // loading: false,
-      // submitting: false,
-      // title: '',
-      // content: '',
+  methods: {
+    deleteSnipp: function(id){
+      this.$emit('deleteSnippet', id)
+      console.log('(LATEST)EMIT - deleteSnipp: ', id)
+
     }
-  },
+  }
+  // data() {
+  //   return {
+  //      snipps: [],
+  //      loading: false,
+  //      submitting: false,
+  //      title: '',
+  //      content: '',
+  //   }
+  // },
   // created() {
   //   this.loading = true;
   //   this.snipps = [];
