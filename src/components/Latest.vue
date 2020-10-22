@@ -9,8 +9,7 @@
           <p class="snippLable1">Title:</p>
           <p class="snippValue1">{{ snipp.title }}</p>  
           <p class="snippLable2">Content:</p>
-          <p class="snippValue2">{{ snipp.content }}</p>
-          
+          <p class="snippValue2">{{ snipp.content }}</p> 
         </li>
       </ol>
     </div>
@@ -18,11 +17,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
-
-// const apiUrl = 'https://www.forverkliga.se/JavaScript/api/api-snippets.php';
-// const apiLatest = '?latest';
-
 export default {
   name: 'Latestsnipps',
   props: {
@@ -35,56 +29,16 @@ export default {
 
     }
   }
-  // data() {
-  //   return {
-  //      snipps: [],
-  //      loading: false,
-  //      submitting: false,
-  //      title: '',
-  //      content: '',
-  //   }
-  // },
-  // created() {
-  //   this.loading = true;
-  //   this.snipps = [];
-
-  //   axios.get(apiUrl+apiLatest)
-  //   .then((response) => {
-  //     const data = response.data;
-  //     this.snipps = data;
-  //     this.loading = false;
-  //   });
-  
-  // },
-  // methods: {
-  //   fetchSnipps() {
-  //     this.loading = true;
-  //     this.snipps = [];
-
-  //   axios.get(apiUrl+apiLatest)
-  //     .then((response) => {
-  //       const data = response.data;
-  //       this.snipps = data;
-  //       this.loading = false;
-  //     });
-  //   },
-  //   deleteSnipp(id) {
-  //     this.submitting = true;
-
-  //     axios.post('https://forverkliga.se/JavaScript/api/api-snippets.php?', { delete:'delete',
-  //       id:id
-  //     })
-  //     .then(response => {
-  //       console.log('axios returned: ', response);
-  //       this.submitting = false;
-  //       this.fetchSnipps();
-  //     });
-  //   }
-  // }
 }
 </script>
 
 <style>
+#latestsnipps{
+  width: 100vw;
+}
+.listSnippet {
+  padding: 2rem;
+}
 .listSnippet p {
   display: inline;
 }
@@ -97,17 +51,6 @@ export default {
 }
 .listSnippet ol li {
   padding: 0px 10px 10px 0px;
-}
-.addSnipp {
-  padding: 20px 50px;
-  border: 1;
-  background-color: lightgrey;
-  color: black;
-}
-.contentBlock > input {
-  margin: 0px 20px 0px 0px;
-  padding: 5px 10px;
-
 }
 .snippDelete {
   padding: 3px;

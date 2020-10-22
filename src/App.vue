@@ -1,9 +1,9 @@
 <template>
 	<div id="app">
 		<Header v-on:sendData="sendToLatest($event)" />
+		<Latest v-bind:passthru="snipps" v-on:deleteSnippet="deleteSnipp($event)" />
 		<p v-if="submitting" class="submittingText">Submitting...</p>
 		<p v-if="loading" class="loadingText">Loading our Snippets...</p>
-		<Latest v-bind:passthru="snipps" v-on:deleteSnippet="deleteSnipp($event)" />
 	</div>
 </template>
 
@@ -74,16 +74,16 @@ export default {
 		
 		},
 		deleteSnipp(id) {
-		this.submitting = true;
+			this.submitting = true;
 
-		axios.post('https://forverkliga.se/JavaScript/api/api-snippets.php?', { delete:'delete',
+			axios.post('https://forverkliga.se/JavaScript/api/api-snippets.php?', { delete:'delete',
 			id:id
-		})
-		.then(response => {
-			console.log('axios returned: ', response);
-			this.submitting = false;
-			this.fetchSnipps();
-		});
+			})
+			.then(response => {
+				console.log('axios returned: ', response);
+				this.submitting = false;
+				this.fetchSnipps();
+			});
 		}
 	},
 	components: {
@@ -99,5 +99,8 @@ export default {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #2c3e50;
+}
+.submittingText, .loadingText {
+	text-align: center;
 }
 </style>

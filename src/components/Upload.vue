@@ -13,7 +13,6 @@
       v-model="content"
       >
       <button class="btn" @click="inputData()">Add Snippet</button>
-      <br>
     </div>
   </div>
 </template>
@@ -36,7 +35,7 @@ export default {
       let myInput = [this.title, this.content]
 
       this.$emit('inputData', myInput)
-      console.log('(UPLOAD)EMIT - inputData: ', myInput)
+      // console.log('(UPLOAD)EMIT - inputData: ', myInput)
 
     }
   }
@@ -45,7 +44,7 @@ export default {
 
 <style>
 .addSnipp {
-  padding: 20px 50px;
+  padding: 1rem 2rem;
   border: 1;
   background-color: lightgrey;
   color: black;
@@ -54,8 +53,5 @@ export default {
   margin: 0px 20px 0px 0px;
   padding: 5px 10px;
 
-}
-.snippLable1, .snippLable2 {
-  font-weight: bold;
 }
 </style>
